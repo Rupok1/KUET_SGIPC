@@ -1,0 +1,66 @@
+﻿@model List<KUET_SGIPC.Models.ResourseTable>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 5px;
+            padding: 25px;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: "Sofia", sans-serif;
+            text-shadow: 3px 3px 3px #ababab;
+            margin-bottom: 20px;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<div class="container card" style="margin-top:100px;">
+    <h2>Resourses</h2>
+    <table class="table">
+        <tr>
+            <th>
+                Title
+            </th>
+
+            <th>
+                Link
+            </th>
+           
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    <a href="@item.Link">Click</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+</div>
+

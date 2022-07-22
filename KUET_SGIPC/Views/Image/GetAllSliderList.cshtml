@@ -1,0 +1,49 @@
+﻿@using KUET_SGIPC.Models
+@model IEnumerable<KUET_SGIPC.Models.ImageTable>
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>SliderList</h2>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.ImagePath)*@
+                    <img src="@Url.Content(item.ImagePath)" width="250" height="100" />
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditSlider", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "GetAllSlider", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <hr />
+    <p style="text-align:center;margin-top:20px;">
+        <button>@Html.ActionLink("Create New", "Add")</button>
+    </p>
+
+
+</div>

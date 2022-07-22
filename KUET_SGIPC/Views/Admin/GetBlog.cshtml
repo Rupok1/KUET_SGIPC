@@ -1,0 +1,50 @@
+﻿@model KUET_SGIPC.Models.BlogTable
+
+
+<div class="container" style="margin-top:50px">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "GetBlogList")
+</p>

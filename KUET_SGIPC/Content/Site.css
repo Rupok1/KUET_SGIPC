@@ -1,0 +1,187 @@
+﻿body {
+padding-top: 50px;
+padding-bottom: 20px;
+}
+.navbar-nav ul li a:hover{
+    color:gray;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+max-width: 280px;
+}
+
+.navbar-brand a:hover{
+    color:gray;
+}
+
+.notice marquee{
+    margin-bottom:20px;
+    margin-top:40px;
+    background-color:antiquewhite;
+    padding:10px;
+}
+
+
+.contest-section {
+display: flex;
+justify-content: center;
+margin-top: 40px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+background-color: #fff;
+/* border: 1px solid red; */
+}
+a:link{
+color:dodgerblue;
+}
+.contest-section h4 {
+text-align: center;
+}
+
+.contest-section .running {
+padding: 10px;
+margin-top: 0px;
+/* border: 1px solid red; */
+margin-right: auto;
+margin-left: auto;
+}
+
+
+.contest-section .running ul li {
+margin-top: 10px;
+padding: 5px;
+      
+}
+
+.contest-section .running ul li a:hover {
+color: coral;
+text-decoration:dotted;
+}
+
+
+.contest-section .past {
+padding: 10px;
+margin-top: 0px;
+/* border: 1px solid red; */
+margin-right: auto;
+margin-left: auto;
+}
+
+
+.contest-section .past ul li {
+margin-top: 10px;
+padding: 5px;
+}
+
+.contest-section .past ul li a:hover {
+color: coral;
+}
+
+.contest-section .upcomming {
+padding: 10px;
+margin-top: 0px;
+/* border: 1px solid red; */
+margin-right: auto;
+margin-left: auto;
+}
+
+    
+
+.contest-section .upcomming ul li {
+margin-top: 10px;
+padding: 5px;
+}
+
+.contest-section .upcomming ul li a:hover {
+color: coral;
+}
+
+.social_media{
+    padding:10px;
+    text-align:center;
+}
+
+.fab {
+        margin-right:20px;
+        margin-left:20px;
+}
+.footer{
+    padding:10px;
+}
+    .footer p {
+        text-decoration: none;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+    }
+hr{
+    border:1px solid groove;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 32%;
+    height:auto;
+}
+div.gallery-container{
+   height:auto;
+   width:100%;
+}
+
+
+div.gallery img {
+    width: 100%;
+    height: 400px;
+       
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/*--About Css start--*/
+div.about-us h2 {
+    margin-top: 30px;
+    font-family: "Sofia", sans-serif;
+    text-shadow: 3px 3px 3px #ababab;
+    font-weight:bold;
+}
+div.about2{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top:50px;
+}
+
+div.about2 img{
+    float:right;
+}
+div.about2::after{
+    content:"";
+    clear:both;
+    display:table;
+}
+/*div.about2 p{
+   padding-top:100px;
+}*/
+
+/*--About Css start--*/

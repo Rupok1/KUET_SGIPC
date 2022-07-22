@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ResoursePannelModelStoreContainer" CdmEntityContainer="ResoursePannelEntities">
+    <EntitySetMapping Name="ResourseTable">
+      <EntityTypeMapping TypeName="ResoursePannelModel.ResourseTable">
+        <MappingFragment StoreEntitySet="ResourseTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,33 @@
+﻿@model KUET_SGIPC.Models.ImageTable
+
+@{
+    ViewBag.Title = "GetAllSlider";
+}
+
+<h2>GetAllSlider</h2>
+
+<div>
+    <h4>ImageTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+          <img src="@Url.Content(Model.ImagePath)" width="800" height="400" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "GetAllSliderList")
+</p>

@@ -1,0 +1,27 @@
+﻿@model KUET_SGIPC.Models.BlogTable
+
+
+<header>
+    <style>
+        p{
+            font-size: 1.5em;
+            line-height: 1.4em;
+        }
+       
+    </style>
+</header>
+
+<div class="container" style="margin-top:80px">
+
+    <div>
+        <h1 style="color:darkcyan">@Html.DisplayFor(model => model.Title)</h1>
+        <p style="color:darkcyan"><i class="fa fa-calendar" aria-hidden="true" style="color:darkcyan"></i> @Html.DisplayFor(model => model.Date) <i class="fa-solid fa-clock" style="color:darkcyan"></i>  @Html.DisplayFor(model => model.Time)</p><br />
+
+        <p>
+            @Html.DisplayFor(model => model.LongDes)
+        </p>
+
+
+    </div>
+
+</div>

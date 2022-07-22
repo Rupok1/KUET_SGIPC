@@ -1,0 +1,58 @@
+﻿@model IEnumerable<KUET_SGIPC.Models.BlogTable>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 5px;
+            padding: 25px;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+        h2 {
+            text-align: center;
+            font-family: "Sofia", sans-serif;
+            text-shadow: 3px 3px 3px #ababab;
+            margin-bottom: 20px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<div class="container" style="margin:auto">
+    <h2>Blog Page</h2>
+    <div class="container">
+
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <p><h4 style="color:darkcyan">@Html.DisplayFor(modelItem => item.Title)</h4></p>
+                <p style="color:darkcyan"><i class="fa fa-calendar" aria-hidden="true" style="color:darkcyan"></i> @Html.DisplayFor(modelItem => item.Date) <i class="fa-solid fa-clock" style="color:darkcyan"></i>  @Html.DisplayFor(modelItem => item.Time)</p><br />
+
+                <p>
+                    @Html.DisplayFor(modelItem => item.ShortDes)
+                    <a href="/Home/BlogDetails?id=@item.Id">Read more</a>
+                </p>
+
+            </div>
+
+        }
+
+
+    </div>
+</div>

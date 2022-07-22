@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdminPannelModelStoreContainer" CdmEntityContainer="AdminPannelDB">
+    <EntitySetMapping Name="NoticeTbl">
+      <EntityTypeMapping TypeName="AdminPannelModel.NoticeTbl">
+        <MappingFragment StoreEntitySet="NoticeTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Notice" ColumnName="Notice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

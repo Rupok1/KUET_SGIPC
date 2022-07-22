@@ -1,0 +1,199 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUET SGIPC</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" href="~/Image/fav.ico" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <style>
+        .navbar-inverse .navbar-nav > li > a {
+            font-size: 16px;
+            color: black;
+            font-family: 'Poppins', sans-serif;
+        }
+
+            .navbar-inverse .navbar-nav > li > a:hover {
+                color: red;
+            }
+
+        .navbar-inverse .navbar-brand {
+            font-size: 30px;
+            color: #2557e0;
+            font-family: "Sofia", sans-serif;
+            font-weight: bold;
+            text-shadow: 3px 3px 3px #ababab;
+        }
+
+            .navbar-inverse .navbar-brand:hover {
+                color: red;
+            }
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: white;
+            color: black;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    background-color: #ababab;
+                }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #ababab;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white;color:black;padding-top:20px; border-color:white;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("KUET SGIPC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Contest</button>
+                        <div class="dropdown-content">
+                            @Html.ActionLink("Upcomming Contest", "Contest", "Home")
+                            @Html.ActionLink("Past Contest", "PastContest", "Home")
+
+                        </div>
+                    </div>
+                    <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Resourses</button>
+                        <div class="dropdown-content">
+                            @Html.ActionLink("Template", "Resourses", "Home")
+                            @Html.ActionLink("Others", "Others", "Home")
+                        </div>
+                    </div>
+
+                    <li>@Html.ActionLink("Gallery", "LoadGallery", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    @{
+        bool admin = false;
+        string x = User.Identity.GetUserName();
+        if (x == "rupok1807003@stud.kuet.ac.bd" && User.Identity.IsAuthenticated)
+        {
+            admin = true;
+        }
+    }
+
+    @if (@admin)
+    {
+        <div class="navbar navbar-inverse navbar-fixed-bottom" style="background-color:white;color:black;padding-top:20px; border-color:white; padding-bottom:30px">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*@Html.ActionLink("KUET SGIPC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Admin")</li>
+                        <li>@Html.ActionLink("AddSlider", "Add", "Image")</li>
+                        <li>@Html.ActionLink("AddGallery Image", "AddGalleryImage", "Admin")</li>
+                        <li>@Html.ActionLink("AddUpcommingContest", "AddContest", "Admin")</li>
+                        <li>@Html.ActionLink("AddPastContest", "AddPastContest", "Admin")</li>
+                        <li>@Html.ActionLink("AddNotice", "AddMarqueeNotice", "Admin")</li>
+                        <li>@Html.ActionLink("AddBlog", "AddBlog", "Admin")</li>
+                        <li>@Html.ActionLink("AddResourse", "AddResourse", "Admin")</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footer">
+                <div class="social_media container-fluid">
+                    <a class="fb-ic" href="https://www.facebook.com/groups/sgipc.kuet">
+                        <i class="fab fa-facebook-f fa-lg"></i>
+
+                    </a>
+                    <a class="tw-ic">
+                        <i class="fab fa-twitter fa-lg "></i>
+                    </a>
+                    <a class="gplus-ic">
+                        <i class="fab fa-google-plus fa-lg"></i>
+                    </a>
+                    <a class="ins-ic">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a class="ins-ic" href="https://www.linkedin.com/in/sgipc-kuet-2799551ab">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                </div>
+                <p style="text-align:center">&copy; @DateTime.Now.Year - KUET SGIPC</p>
+            </div>
+
+        </footer>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
